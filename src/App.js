@@ -8,7 +8,7 @@ import Ingreso from "./pages/Ingreso";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+       <Navbar /> 
       <Routes>
         <Route exact path="/registro" element={<Registro />} />
         <Route exact path="/cotizacion" element={<Cotizacion />} />

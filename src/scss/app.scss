@@ -1,0 +1,181 @@
+$Font1: "Ubuntu", sans-serif;
+$Font2: "Heebo", sans-serif;
+$BlueBG: #e6eff5;
+$OrangeBG: #ff9c19;
+$DarkBlueButton: #1285c5;
+$LightBlueButton: #20a5ef;
+$ColorFont1: #353a3d;
+$ColorFont2: #f39d2f;
+$ColorFont3: #707b84;
+$ColorFont4: #a6afb6;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $BlueBG;
+  height: 100vh;
+  font-family: $Font1;
+  color: $ColorFont1;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 62%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-left: 5%;
+  
+}
+
+.lista-links {
+  margin: auto;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: $ColorFont1;
+  font-size: 18px;
+  font-weight:600;
+}
+.logo-header {
+  width: 13%;
+  
+}
+
+.container-form {
+  margin: auto;
+  margin-top: 4%;
+  width: 58%;
+  height: 73%;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  margin: auto;
+  margin-top: 0;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  font-family: $Font2;
+  font-size: 14px;
+  color: $ColorFont3;
+}
+
+.top-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+.sub-top-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-left: 9%;
+}
+.text-form {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.sub-text-form {
+  margin-top: 3%;
+  margin-right: 6%;
+  font-family: $Font2;
+  font-size: 14px;
+  width: 50%;
+}
+.flecha {
+  width: 10%;
+  height: 10%;
+}
+
+.img-flecha {
+  width: 40%;
+  margin: 20px;
+}
+
+.input-form {
+  background-color: transparent;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.label {
+  padding: 0px;
+}
+.input {
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+  }
+}
+
+::placeholder {
+  color: $ColorFont4;
+}
+
+.input:focus + .underline {
+  transform: scale(1);
+}
+
+.underline {
+  background-color: $OrangeBG;
+  display: inline-block;
+  height: 1.5px;
+  left: 50px;
+  margin-top: -6px;
+  //position: absolute;
+  top: 185px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  width: 100%;
+}
+.phone {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.flag .whatsapp {
+  width: "22px";
+  height: "21px";
+  position: relative;
+}
+.bottom-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+.button-form {
+  width: 25%;
+  padding: 10px;
+  font-family: $Font1;
+  font-size: 16px;
+  border-radius: 20px;
+}
+.cancel {
+  border-color: $OrangeBG;
+  background-color: white;
+  color: $OrangeBG;
+}
+.continue {
+  background: linear-gradient(to right, #20a5ef 15%, #0a8ed8 45%, #1285c5 100%);
+  color: white;
+  border: none;
+}
