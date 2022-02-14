@@ -5,12 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Form2 from "../Components/Form2.jsx";
 import Arrow from "../images/arrow-left.png";
 
-const Form = ({
-  completedForm,
-  setCompletedForm,
-  completedForm2,
-  setCompletedForm2,
-}) => {
+
+const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedForm2 }) => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -24,8 +20,8 @@ const Form = ({
       {!completedForm ? (
         <>
           <div className="container-form1">
-            <div className="top-form">
-              <div className="sub-top-form">
+            <div className="container-form1-top">
+              <div className="container-form1-top-sub">
                 <a className="flecha" href="/ingreso">
                   <img
                     className="img-flecha1"
@@ -37,47 +33,50 @@ const Form = ({
               </div>
               <p className="sub-text-form">Todos los campos son obligatorios</p>
             </div>
-            <form className="form" autocomplete="off">
-              <div className="input-form">
+            <form className="form1" autocomplete="off">
+              <div className="form1-input">
                 <label className="label">Nombre</label>
                 <input
                   type="text"
+                  data-bouncer-message="*Ingresa tu nombre para continuar"
                   value={name}
                   autocomplete="new-password"
                   className="input"
                   placeholder="Daniela"
-                  required="true"
+                  required
                   onChange={(e) => setName(e.target.value)}
                 ></input>
                 <span class="underline"></span>
               </div>
-              <div className="input-form">
+              <div className="form1-input">
                 <label className="label">Apellido</label>
                 <input
                   type="text"
+                  data-bouncer-message="*Ingresa tu apellido para continuar"
                   value={lastName}
                   autocomplete="new-password"
                   className="input"
                   placeholder="Mantilla"
-                  required="true"
+                  required
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
                 <span class="underline"></span>
               </div>
-              <div className="input-form">
+              <div className="form1-input">
                 <label className="label">Correo electrónico</label>
                 <input
                   type="email"
+                  data-bouncer-message="*Ingresa un correo válido"
                   value={email}
                   autocomplete="new-password"
                   className="input"
                   placeholder="Dani.Mantilla@mipaquete.com"
-                  required="true"
+                  required
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
                 <span class="underline"></span>
               </div>
-              <div className="input-form ">
+              <div className="form1-input">
                 <label className="label">Celular</label>
                 <div className="phone">
                   <img
@@ -88,12 +87,15 @@ const Form = ({
                     alt="bandera de Colombia"
                   />
                   <input
-                    type="text"
+                    type="tel"
+                    data-bouncer-message="*El número de celular debe ser colombiano y de 10 dígitos"
                     value={phone}
                     autocomplete="new-password"
                     className="input cellphone"
                     placeholder="      3101234567"
-                    required="true"
+                    minLength="10"
+                    maxLength="10"
+                    required
                     onChange={(e) => setPhone(e.target.value)}
                   ></input>
                   <img
@@ -106,28 +108,30 @@ const Form = ({
                 </div>
                 <span class="underline"></span>
               </div>
-              <div className="input-form">
+              <div className="form1-input">
                 <label className="label">Ciudad</label>
                 <input
                   type="text"
+                  data-bouncer-message="*Por favor ingresa una ciudad válida"
                   value={city}
                   autocomplete="new-password"
                   className="input"
                   placeholder="MEDELLÍN"
-                  required="true"
+                  required
                   onChange={(e) => setCity(e.target.value)}
                 ></input>
                 <span class="underline"></span>
               </div>
-              <div className="input-form">
+              <div className="form1-input">
                 <label className="label">Dirección de recogida</label>
                 <input
                   type="text"
+                  data-bouncer-message="*Ingresa una dirección de recogida"
                   value={address}
                   autocomplete="new-password"
                   className="input"
                   placeholder="Carrera 25 A # 23 - 18"
-                  required="true"
+                  required
                   onChange={(e) => setAddress(e.target.value)}
                 ></input>
                 <span class="underline"></span>
@@ -141,6 +145,7 @@ const Form = ({
                 Cancelar{" "}
               </button>
               <button
+              type="submit"
                 className="button-form continue"
                 onClick={() => {
                   (name && lastName && email && phone && city && address) !== ""

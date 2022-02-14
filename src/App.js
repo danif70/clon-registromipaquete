@@ -5,7 +5,9 @@ import Cotizacion from "./pages/Cotizacion";
 import Puntos from "./pages/Puntos";
 import Ingreso from "./pages/Ingreso";
 
+
 function App() {
+
   return (
     <BrowserRouter>
        <Navbar /> 

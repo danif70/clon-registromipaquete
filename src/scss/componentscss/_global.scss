@@ -1,0 +1,103 @@
+$Font1: "Ubuntu", sans-serif;
+$Font2: "Heebo", sans-serif;
+$Accent: #ff9c19;
+$DarkButton: #1285c5;
+$LightButton: #20a5ef;
+$ColorFont1: #353a3d;
+$ColorFont2: #f39d2f;
+$ColorFont3: #707b84;
+$ColorFont4: #cfd6db;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: url("../.././images/bg-mipaquete.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: $Font1;
+  color: $ColorFont1;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 10px;
+  padding: 3px;
+  margin-left: 6%;
+  justify-content: space-around;
+
+  &-logo {
+    width: 8%;
+  }
+  .subButton-left {
+    display: flex;
+    flex-direction: row;
+    margin-right: 25%;
+    .lista-links {
+      margin: auto;
+      list-style: none;
+      text-decoration: none;
+      padding: 8px;
+      a {
+        text-decoration: none;
+        color: $ColorFont1;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+    
+  }
+  @include media(mobile-only){
+    display: none;
+  }
+}
+
+.sub-button-right {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10%;
+
+  .button-right {
+    width: 75%;
+    height: 45%;
+    padding: 3px;
+    font-family: $Font1;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    list-style: none;
+    
+  }
+  .continue {
+    background: linear-gradient(to right, #20a5ef 15%, #0a8ed8 45%, #1285c5 100%);
+    color: white;
+    border: none;
+    box-shadow:  6px, $DarkButton;
+  }
+
+  .ingresa {
+    color: $ColorFont2;
+    font-size: 17px;
+    font-weight: bold;
+    padding-right: 10px;
+    text-decoration: none;
+  }
+}
+
+/**
+ * Form Validation Errors
+ */
+
+
+.error-message {
+	color: red;
+	font-size: 12;
+	margin-bottom: 1em;
+}
+

@@ -83,7 +83,7 @@ const Form2 = ({
               <div className="sub-top-form2">
                 <img
                   type="button"
-                  className="img-flecha"
+                  className="img-flecha1"
                   src={Arrow}
                   alt="flecha a la izquierda"
                   onClick={() => setCompletedForm(false)}
@@ -100,6 +100,7 @@ const Form2 = ({
                   <div className="select-form">
                     <select
                       className="select"
+                      data-bouncer-message="*Selecciona tu tipo de documento"
                       value={document.value}
                       onChange={(e) => setDocumentType(e.target.value)}
                     >
@@ -108,15 +109,17 @@ const Form2 = ({
                       ))}
                     </select>
                   </div>
-                  <div className="input-form" autoComplete="off">
+                  <div className="form2-input" autoComplete="off">
                     <label className="label">Número de identificación</label>
                     <input
-                      type="text"
+                      type="number"
+                      data-bouncer-message="*Tu identificación debe tener más de 5 dígitos"
+                      minLength="5"
                       value={numberDocument}
                       autocomplete="new-password"
                       className="input"
                       placeholder="0123456789"
-                      required="true"
+                      required
                       onChange={(e) => setNumberDocument(e.target.value)}
                     ></input>
                     <span className="underline"></span>
@@ -128,7 +131,7 @@ const Form2 = ({
                 </>
               ) : (
                 <>
-                  <div className="input-form">
+                  <div className="form2-input">
                     <label className="label">Número de identificación</label>
                     <input
                       type="number"
@@ -136,7 +139,7 @@ const Form2 = ({
                       autocomplete="new-password"
                       className="input"
                       placeholder="0123456789"
-                      required={true}
+                      required
                       onChange={(e) => setNumberDocument(e.target.value)}
                     ></input>
                     <span className="underline undertext"></span>
@@ -145,21 +148,21 @@ const Form2 = ({
                       verificación
                     </span>
                   </div>
-                  <div className="input-form">
+                  <div className="form2-input">
                     <label className="label">Razón Social</label>
                     <input
                       type="text"
                       value={razonSocial}
                       autocomplete="new-password"
                       className="input"
-                      required={true}
+                      required
                       onChange={(e) => setRazonSocial(e.target.value)}
                     ></input>
                     <span class="underline"></span>
                   </div>
                 </>
               )}
-              <div>
+              <div className="person">
                 <p className="select-person">Tipo de Persona</p>
                 <div className="typeselect">
                   <input
@@ -187,7 +190,7 @@ const Form2 = ({
                   </label>
                 </div>
               </div>
-              <div className="input-form">
+              <div className="form2-input">
                 <label className="label">NombreComercial</label>
                 <input
                   type="text"
@@ -195,7 +198,7 @@ const Form2 = ({
                   autocomplete="new-password"
                   className="input"
                   placeholder="Mairena"
-                  required={true}
+                  required
                   onChange={(e) => setCommercialName(e.target.value)}
                 ></input>
                 <span class="underline"></span>
@@ -217,6 +220,7 @@ const Form2 = ({
               </div>
             </form>
             <button
+            type="submit"
               className="button-form2 continue"
               onClick={() => {
                 ((documentType &&

@@ -6,7 +6,7 @@ import Form from "../Components/Form";
 const Registro = () => {
   const [completedForm, setCompletedForm] = useState(false);
   const [completedForm2, setCompletedForm2] = useState(false);
-
+  
   return (
     <Fragment>
       

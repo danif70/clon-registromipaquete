@@ -1,0 +1,168 @@
+.container-form2 {
+  margin: auto;
+  margin-top: 6%;
+  width: 60%;
+  height: 85%;
+  background-color: white;
+  border-radius: 13px;
+  box-shadow:  0 14px 14px -8px $ColorFont3;
+
+  .top-form2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+
+    .sub-top-form2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      margin-left: 9%;
+
+      .img-flecha1 {
+        width: 13%;
+        margin: 20px;
+      }
+    }
+
+    .text-form2 {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-left: -1%;
+    }
+
+    .sub-text-form2 {
+      margin-top: 3%;
+      margin-right: 6%;
+      font-family: $Font2;
+      font-size: 14px;
+      width: 50%;
+      color: $ColorFont4;
+    }
+  }
+
+  .form2 {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    margin: auto;
+    margin-top: -2%;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    font-family: $Font2;
+    font-size: 14px;
+    color: $ColorFont3;
+
+    .select-form {
+      margin-top: 35px;
+
+      .select {
+        border: 2px solid $ColorFont4;
+        border-radius: 5px;
+        font-family: $Font2;
+        font-size: 16px;
+        padding: 5px;
+        width: 80%;
+      }
+    }
+
+    &-input {
+      background-color: transparent;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+
+      .label {
+        padding: 0px;
+        font-family: $Font2;
+        font-size: 14px;
+        color: #707b84;
+      }
+
+      .input {
+        background-color: transparent;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        font-size: 16px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      ::placeholder {
+        color: $ColorFont4;
+        font-size: 16px;
+      }
+
+      .underline {
+        background-color: $Accent;
+        display: inline-block;
+        height: 1.5px;
+        left: 50px;
+        margin-top: -6px;
+        top: 185px;
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        width: 100%;
+      }
+
+      .input:focus + .underline {
+        transform: scale(1);
+      }
+    }
+    .person {
+      .select-person {
+        font-family: $Font2;
+        font-size: 16px;
+        color:$ColorFont1;
+        font-weight: 600;
+      }
+      .typeselect {
+        margin-top: 10px;
+        .type {
+          font-family: $Font2;
+          font-size: 14px;
+          color:$ColorFont3;
+          margin-left: 10px;
+        }
+      }
+      }
+  }
+
+  .button-form2 {
+    margin-right: 50%;
+    width: 30%;
+    height: 15%;
+    padding: 10px;
+    font-family: $Font1;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 23px;
+    margin-left: 35%;
+    cursor: pointer;
+  }
+
+  .continue {
+    background: linear-gradient(
+      to right,
+      #20a5ef 15%,
+      #0a8ed8 45%,
+      #1285c5 100%
+    );
+    color: white;
+    border: none;
+    box-shadow: 6px, $DarkButton;
+  }
+  .error-message {
+    color: red;
+    font-size: 12;
+    margin-bottom: 1em;
+  }
+}
