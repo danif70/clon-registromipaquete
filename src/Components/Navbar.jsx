@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Logo from "../images/logo-mipaquete.png"
 
 
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <header className='header'>
       <img className='logo-header'src={ Logo } alt='logo Mi paquete . com'/>
-        <li className='lista-links nav'>
+        
+        <div className= "subButton-left">
+          <li className='lista-links nav'>
           <Link to="/cotizacion">Inicio</Link>
         </li>
         <li className='lista-links nav'>
@@ -41,12 +45,15 @@ const Navbar = () => {
         <li className='lista-links nav'>
           <Link to="/acumula-puntos">Puntos mipaquete</Link>
         </li>
-        {/* <li className='lista-links button-right'>
-          <Link to="/ingreso">Ingresa</Link>
+        </div>
+        <div className= 'sub-button-right'>
+        <li className='lista-links button-right '>
+          <Link to="/ingreso" className='ingresa'>Ingresa</Link>
         </li>
-        <li className='lista-links button-right'>
-          <Link to="/registro">Regístrate</Link>
-        </li>  */} 
+        <button className='lista-links button-right continue' onClick={()=> navigate("/registro")}>
+          Regístrate
+        </button>
+        </div>   
     </header>
   );
 };

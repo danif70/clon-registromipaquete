@@ -5,7 +5,12 @@ import { useNavigate } from "react-router-dom";
 import Form2 from "../Components/Form2.jsx";
 import Arrow from "../images/arrow-left.png";
 
-const Form = ({ completedForm, setCompletedForm }) => {
+const Form = ({
+  completedForm,
+  setCompletedForm,
+  completedForm2,
+  setCompletedForm2,
+}) => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -13,7 +18,6 @@ const Form = ({ completedForm, setCompletedForm }) => {
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
- 
 
   return (
     <Fragment>
@@ -24,7 +28,7 @@ const Form = ({ completedForm, setCompletedForm }) => {
               <div className="sub-top-form">
                 <a className="flecha" href="/ingreso">
                   <img
-                    className="img-flecha"
+                    className="img-flecha1"
                     src={Arrow}
                     alt="flecha a la izquierda"
                   />
@@ -75,7 +79,7 @@ const Form = ({ completedForm, setCompletedForm }) => {
               </div>
               <div className="input-form ">
                 <label className="label">Celular</label>
-                <span className="phone">
+                <div className="phone">
                   <img
                     className="flag"
                     src={Flag}
@@ -84,11 +88,12 @@ const Form = ({ completedForm, setCompletedForm }) => {
                     alt="bandera de Colombia"
                   />
                   <input
-                    type="tel"
-                    className="input"
-                    placeholder="3101234567"
-                    required="true"
+                    type="text"
                     value={phone}
+                    autocomplete="new-password"
+                    className="input cellphone"
+                    placeholder="      3101234567"
+                    required="true"
                     onChange={(e) => setPhone(e.target.value)}
                   ></input>
                   <img
@@ -98,8 +103,8 @@ const Form = ({ completedForm, setCompletedForm }) => {
                     height="21px"
                     alt="logo de whatsapp"
                   />
-                  <span class="underline"></span>
-                </span>
+                </div>
+                <span class="underline"></span>
               </div>
               <div className="input-form">
                 <label className="label">Ciudad</label>
@@ -152,13 +157,15 @@ const Form = ({ completedForm, setCompletedForm }) => {
       ) : (
         <Form2
           completedForm={completedForm}
-          setCompletedForm={setCompletedForm} 
-          name ={name}
+          setCompletedForm={setCompletedForm}
+          completedForm2={completedForm2}
+          setCompletedForm2={setCompletedForm2}
+          name={name}
           lastName={lastName}
-          email= {email}
-          phone= {phone}
-          city= {city}
-          address= {address}
+          email={email}
+          phone={phone}
+          city={city}
+          address={address}
         />
       )}
     </Fragment>

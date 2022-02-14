@@ -3,7 +3,18 @@ import { Fragment, useState } from "react";
 import Arrow from "../images/arrow-left.png";
 import Form3 from "./Form3";
 
-const Form2 = ({ name, lastName, email, phone, city, address }) => {
+const Form2 = ({
+  completedForm,
+  setCompletedForm,
+  completedForm2,
+  setCompletedForm2,
+  name,
+  lastName,
+  email,
+  phone,
+  city,
+  address,
+}) => {
   console.log(name, city, address);
   const [documentType, setDocumentType] = useState("");
   const [numberDocument, setNumberDocument] = useState("");
@@ -11,9 +22,10 @@ const Form2 = ({ name, lastName, email, phone, city, address }) => {
   const [razonSocial, setRazonSocial] = useState("");
   const [typeClient, setTypeClient] = useState("Natural");
   const [numberShipments, setNumberShipments] = useState("");
-  const [completedForm2, setCompletedForm2] = useState(false);
+ 
 
   const document = [
+    { label: "Tipo de Documento" },
     {
       label: "NIT",
       value: "nit",
@@ -38,8 +50,7 @@ const Form2 = ({ name, lastName, email, phone, city, address }) => {
 
   const shipment = [
     {
-      label: "Seleccionar",
-      
+      label: "Actualmente ¿Cuántos envíos haces al mes?",
     },
     {
       label: "1 a 30 envíos",
@@ -70,14 +81,14 @@ const Form2 = ({ name, lastName, email, phone, city, address }) => {
           <div className="container-form2">
             <div className="top-form2">
               <div className="sub-top-form2">
-                <a className="flecha" href="/ingreso">
-                  <img
-                    className="img-flecha"
-                    src={Arrow}
-                    alt="flecha a la izquierda"
-                  />
-                </a>
-                <p className="text-form">Diligencia tus datos</p>
+                <img
+                  type="button"
+                  className="img-flecha"
+                  src={Arrow}
+                  alt="flecha a la izquierda"
+                  onClick={() => setCompletedForm(false)}
+                />
+                <p className="text-form2">Diligencia tus datos</p>
               </div>
               <p className="sub-text-form2">
                 Los campos con * son obligatorios
@@ -208,11 +219,15 @@ const Form2 = ({ name, lastName, email, phone, city, address }) => {
             <button
               className="button-form2 continue"
               onClick={() => {
-                ((documentType&&
+                ((documentType &&
                   numberDocument &&
                   commercialName &&
                   typeClient &&
-                  numberShipments)||(numberDocument && razonSocial && commercialName && numberShipments)) !== ""
+                  numberShipments) ||
+                  (numberDocument &&
+                    razonSocial &&
+                    commercialName &&
+                    numberShipments)) !== ""
                   ? setCompletedForm2(true)
                   : setCompletedForm2(false);
               }}
@@ -223,12 +238,20 @@ const Form2 = ({ name, lastName, email, phone, city, address }) => {
         </>
       ) : (
         <Form3
+          completedForm2={completedForm2}
+          setCompletedForm2={setCompletedForm2}
           name={name}
           lastName={lastName}
           email={email}
           phone={phone}
           city={city}
           address={address}
+          documentType={documentType}
+          numberDocument={numberDocument}
+          commercialName={commercialName}
+          typeClient={typeClient}
+          numberShipments={numberShipments}
+          razonSocial={razonSocial}
         />
       )}
     </Fragment>
