@@ -8,21 +8,24 @@ const Form2 = ({
   setCompletedForm,
   completedForm2,
   setCompletedForm2,
-  name,
-  lastName,
-  email,
-  phone,
-  city,
-  address,
+  objClient,
 }) => {
-  console.log(name, city, address);
   const [documentType, setDocumentType] = useState("");
   const [numberDocument, setNumberDocument] = useState("");
   const [commercialName, setCommercialName] = useState("");
   const [razonSocial, setRazonSocial] = useState("");
   const [typeClient, setTypeClient] = useState("Natural");
   const [numberShipments, setNumberShipments] = useState("");
- 
+
+  const objClient2 = {
+    ...objClient,
+    tipoDeDocumento: documentType,
+    numeroDeDocumento: numberDocument,
+    nombreComercial: commercialName,
+    razonSocial: razonSocial,
+    tipoCliente: typeClient,
+    numeroEnvios: numberShipments,
+  };
 
   const document = [
     { label: "Tipo de Documento" },
@@ -158,7 +161,7 @@ const Form2 = ({
                       required
                       onChange={(e) => setRazonSocial(e.target.value)}
                     ></input>
-                    <span class="underline"></span>
+                    <span className="underline"></span>
                   </div>
                 </>
               )}
@@ -201,7 +204,7 @@ const Form2 = ({
                   required
                   onChange={(e) => setCommercialName(e.target.value)}
                 ></input>
-                <span class="underline"></span>
+                <span className="underline"></span>
                 <span className="label undertext">
                   *El nombre de tu tienda o comercio. Estará en el campo de
                   remitente de las guías que realices.
@@ -220,7 +223,7 @@ const Form2 = ({
               </div>
             </form>
             <button
-            type="submit"
+              type="submit"
               className="button-form2 continue"
               onClick={() => {
                 ((documentType &&
@@ -244,18 +247,7 @@ const Form2 = ({
         <Form3
           completedForm2={completedForm2}
           setCompletedForm2={setCompletedForm2}
-          name={name}
-          lastName={lastName}
-          email={email}
-          phone={phone}
-          city={city}
-          address={address}
-          documentType={documentType}
-          numberDocument={numberDocument}
-          commercialName={commercialName}
-          typeClient={typeClient}
-          numberShipments={numberShipments}
-          razonSocial={razonSocial}
+          objClient2={objClient2}
         />
       )}
     </Fragment>

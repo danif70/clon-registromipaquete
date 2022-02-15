@@ -5,8 +5,12 @@ import { useNavigate } from "react-router-dom";
 import Form2 from "../Components/Form2.jsx";
 import Arrow from "../images/arrow-left.png";
 
-
-const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedForm2 }) => {
+const Form = ({
+  completedForm,
+  setCompletedForm,
+  completedForm2,
+  setCompletedForm2,
+}) => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,6 +18,15 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
+
+  const objClient = {
+    nombre: name,
+    apellido: lastName,
+    correo: email,
+    movil: phone,
+    ciudad: city,
+    dirección: address,
+  };
 
   return (
     <Fragment>
@@ -46,7 +59,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
                   required
                   onChange={(e) => setName(e.target.value)}
                 ></input>
-                <span class="underline"></span>
+                <span className="underline"></span>
               </div>
               <div className="form1-input">
                 <label className="label">Apellido</label>
@@ -60,7 +73,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
                   required
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
-                <span class="underline"></span>
+                <span className="underline"></span>
               </div>
               <div className="form1-input">
                 <label className="label">Correo electrónico</label>
@@ -74,7 +87,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
                   required
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
-                <span class="underline"></span>
+                <span className="underline"></span>
               </div>
               <div className="form1-input">
                 <label className="label">Celular</label>
@@ -106,7 +119,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
                     alt="logo de whatsapp"
                   />
                 </div>
-                <span class="underline"></span>
+                <span className="underline"></span>
               </div>
               <div className="form1-input">
                 <label className="label">Ciudad</label>
@@ -120,7 +133,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
                   required
                   onChange={(e) => setCity(e.target.value)}
                 ></input>
-                <span class="underline"></span>
+                <span className="underline"></span>
               </div>
               <div className="form1-input">
                 <label className="label">Dirección de recogida</label>
@@ -134,7 +147,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
                   required
                   onChange={(e) => setAddress(e.target.value)}
                 ></input>
-                <span class="underline"></span>
+                <span className="underline"></span>
               </div>
             </form>
             <div className="bottom-form">
@@ -145,7 +158,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
                 Cancelar{" "}
               </button>
               <button
-              type="submit"
+                type="submit"
                 className="button-form continue"
                 onClick={() => {
                   (name && lastName && email && phone && city && address) !== ""
@@ -165,12 +178,7 @@ const Form = ({ completedForm, setCompletedForm, completedForm2, setCompletedFor
           setCompletedForm={setCompletedForm}
           completedForm2={completedForm2}
           setCompletedForm2={setCompletedForm2}
-          name={name}
-          lastName={lastName}
-          email={email}
-          phone={phone}
-          city={city}
-          address={address}
+          objClient={objClient}
         />
       )}
     </Fragment>

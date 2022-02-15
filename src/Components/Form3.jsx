@@ -1,29 +1,14 @@
 import React, { Fragment, useState } from "react";
 import Arrow from "../images/arrow-left.png";
 
-const Form3 = (
-  completedForm2,
-  setCompletedForm2,
-  name,
-  lastName,
-  email,
-  phone,
-  city,
-  address,
-  documentType,
-  numberDocument,
-  commercialName,
-  typeClient,
-  numberShipments,
-  razonSocial
-) => {
-  console.log(completedForm2);
+const Form3 = (completedForm2, setCompletedForm2, objClient2) => {
+  console.log(objClient2);
   const handleClick = () => {
     setCompletedForm2(false);
   };
-  const [pass1, setpass1]= useState("")
-  const [pass2, setpass2]= useState("")
-  const [checkOk, setCheckOk] = useState(false)
+  const [pass1, setpass1] = useState("");
+  const [pass2, setpass2] = useState("");
+  const [checkOk, setCheckOk] = useState(false);
 
   return (
     <Fragment>
@@ -41,7 +26,14 @@ const Form3 = (
         <form className="form3">
           <div className="form3-input" autoComplete="off">
             <label className="label">Contraseña</label>
-            <input type="password" className="input" minlength="8" value={pass1} required onChange={(e)=> setpass1(e.target.value)}></input>
+            <input
+              type="password"
+              className="input"
+              minlength="8"
+              value={pass1}
+              required
+              onChange={(e) => setpass1(e.target.value)}
+            ></input>
             <span className="underline"></span>
             <span className="label undertext">
               *Recuerda que tu contraseña debe contener: Mínimo 8 caracteres que
@@ -50,11 +42,23 @@ const Form3 = (
           </div>
           <div className="form3-input" autoComplete="off">
             <label className="label">Confirma tu contraseña</label>
-            <input type="password" className="input" minlength="8" value={pass2} required onChange={(e)=> setpass2(e.target.value)}></input>
+            <input
+              type="password"
+              className="input"
+              minlength="8"
+              value={pass2}
+              required
+              onChange={(e) => setpass2(e.target.value)}
+            ></input>
             <span className="underline"></span>
           </div>
           <div className="privacy">
-            <input type="checkbox" name="checkbox" required onChange={()=> setCheckOk(true)}></input>
+            <input
+              type="checkbox"
+              name="checkbox"
+              required
+              onChange={() => setCheckOk(true)}
+            ></input>
             <span className="sub-privacy">
               <text className="link-privacy">He leído y acepto </text>
               <a
@@ -67,8 +71,15 @@ const Form3 = (
             </span>
           </div>
         </form>
-        {(pass1===pass2)&& checkOk ? ( <button type= "submit" className="button-form3 continue">Crear Cuenta</button>):(<button type= "submit" className="button-form3" disabled>Crear Cuenta</button>)}
-        
+        {pass1 === pass2 && checkOk ? (
+          <button type="submit" className="button-form3 continue">
+            Crear Cuenta
+          </button>
+        ) : (
+          <button type="submit" className="button-form3" disabled>
+            Crear Cuenta
+          </button>
+        )}
       </div>
     </Fragment>
   );

@@ -7,7 +7,7 @@
   border-radius: 13px;
   padding-left: 5%;
   padding-right: 4%;
-  box-shadow:  0 14px 14px -8px $ColorFont3;
+  box-shadow: 0 14px 14px -8px $ColorFont3;
 
   &-top {
     display: flex;
@@ -21,19 +21,18 @@
       font-family: $Font2;
       font-size: 14px;
       width: 60%;
-      
     }
     &-sub {
       display: flex;
       flex-direction: row;
-      margin-left:-4%;
+      margin-left: -4%;
       .flecha {
         width: 30%;
         height: 10%;
         margin: 5px;
         .img-flecha1 {
           width: 13%;
-          margin: 20px
+          margin: 20px;
         }
       }
       .text-form {
@@ -41,23 +40,18 @@
         font-weight: bold;
         letter-spacing: 2px;
         margin-left: -18%;
-        
       }
-     
     }
-    @include media(mobile-only){
-      margin-top: 6%;
+    @include media(mobile-only) {
+      margin-top: 4%;
       margin-right: -6%;
-
     }
     .text-form {
       font-size: 20px;
       font-weight: bold;
       letter-spacing: 2px;
       margin-left: -18%;
-      
     }
-    
   }
   .form1 {
     display: grid;
@@ -79,7 +73,7 @@
         padding: 0px;
         font-family: $Font2;
         font-size: 14px;
-        color:#707b84;
+        color: #707b84;
       }
       .input {
         background-color: transparent;
@@ -89,7 +83,7 @@
         font-size: 16px;
         &:focus {
           outline: none;
-        }  
+        }
       }
       ::placeholder {
         color: $ColorFont4;
@@ -122,14 +116,15 @@
           position: relative;
         }
       }
-      @include media(mobile-only){
-        margin-top: -4%;
+      @include media(mobile-only) {
+        margin-top: -1%;
+      }
     }
-      
-    }
-    @include media(mobile-only){
-        display: flex;
-        flex-direction: column;
+    @include media(mobile-only) {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 
@@ -146,10 +141,15 @@
       cursor: pointer;
     }
     .continue {
-      background: linear-gradient(to right, #20a5ef 15%, #0a8ed8 45%, #1285c5 100%);
+      background: linear-gradient(
+        to right,
+        #20a5ef 15%,
+        #0a8ed8 45%,
+        #1285c5 100%
+      );
       color: white;
       border: none;
-      box-shadow:  6px, $DarkButton;
+      box-shadow: 6px, $DarkButton;
     }
     .cancel {
       border-color: $ColorFont2;
@@ -157,17 +157,18 @@
       color: $ColorFont2;
       cursor: pointer;
     }
-    @include media(mobile-only){
-      
+    @include media(mobile-only) {
       flex-direction: column;
       width: 400%;
-      
     }
-    
   }
-  @include media(mobile-only){
+  @include media(mobile-only) {
+    margin-top: 15%;
+    margin-bottom: 5%;
     display: flex;
     flex-direction: column;
     width: 84%;
+
+    overflow-x: hidden;
   }
 }

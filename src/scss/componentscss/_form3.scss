@@ -6,11 +6,11 @@
   height: 85%;
   background-color: white;
   border-radius: 13px;
-  box-shadow:  0 14px 14px -8px $ColorFont3;
+  box-shadow: 0 14px 14px -8px $ColorFont3;
   .top-form3 {
     display: flex;
     flex-direction: row;
-    margin-left:7%;
+    margin-left: 7%;
   }
   .img-flecha {
     width: 5%;
@@ -23,7 +23,7 @@
     margin-left: -1%;
   }
   .form3 {
-    display:flex;
+    display: flex;
     flex-direction: column;
     .form3-input {
       background-color: transparent;
@@ -35,7 +35,7 @@
         padding: 0px;
         font-family: $Font2;
         font-size: 14px;
-        color:#707b84;
+        color: #707b84;
       }
       .input {
         background-color: transparent;
@@ -45,7 +45,7 @@
         font-size: 16px;
         &:focus {
           outline: none;
-        }  
+        }
       }
       ::placeholder {
         color: $ColorFont4;
@@ -80,8 +80,8 @@
       width: 100;
       .sub-privacy {
         display: flex;
-        flex-direction:row;
-        justify-content:space-evenly;
+        flex-direction: row;
+        justify-content: space-evenly;
         .link-privacy {
           font-family: $Font2;
           font-size: 13px;
@@ -108,10 +108,15 @@
     cursor: pointer;
   }
   .continue {
-    background: linear-gradient(to right, #20a5ef 15%, #0a8ed8 45%, #1285c5 100%);
+    background: linear-gradient(
+      to right,
+      #20a5ef 15%,
+      #0a8ed8 45%,
+      #1285c5 100%
+    );
     color: white;
     border: none;
-    box-shadow:  6px, $DarkButton;
+    box-shadow: 6px, $DarkButton;
   }
   .error-message {
     color: red;

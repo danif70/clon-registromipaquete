@@ -1,5 +1,6 @@
 $Font1: "Ubuntu", sans-serif;
 $Font2: "Heebo", sans-serif;
+$BGColor: #e6eff5;
 $Accent: #ff9c19;
 $DarkButton: #1285c5;
 $LightButton: #20a5ef;
@@ -21,6 +22,17 @@ body {
   font-family: $Font1;
   color: $ColorFont1;
   font-weight: 500;
+  .registro-mobile {
+    display: none;
+    @include media(mobile-only) {
+      display: flex;
+      margin-top: 5%;
+      margin-left: 9%;
+    }
+  }
+  @include media(mobile-only) {
+    background-color: $BGColor;
+  }
 }
 
 .header {
@@ -51,9 +63,8 @@ body {
         font-weight: 600;
       }
     }
-    
   }
-  @include media(mobile-only){
+  @include media(mobile-only) {
     display: none;
   }
 }
@@ -72,13 +83,17 @@ body {
     border-radius: 20px;
     cursor: pointer;
     list-style: none;
-    
   }
   .continue {
-    background: linear-gradient(to right, #20a5ef 15%, #0a8ed8 45%, #1285c5 100%);
+    background: linear-gradient(
+      to right,
+      #20a5ef 15%,
+      #0a8ed8 45%,
+      #1285c5 100%
+    );
     color: white;
     border: none;
-    box-shadow:  6px, $DarkButton;
+    box-shadow: 6px, $DarkButton;
   }
 
   .ingresa {
@@ -94,10 +109,8 @@ body {
  * Form Validation Errors
  */
 
-
 .error-message {
-	color: red;
-	font-size: 12;
-	margin-bottom: 1em;
+  color: red;
+  font-size: 12;
+  margin-bottom: 1em;
 }
-
